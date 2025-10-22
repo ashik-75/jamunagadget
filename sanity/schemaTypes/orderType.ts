@@ -14,22 +14,10 @@ export const orderType = defineType({
       validation: (Rule) => Rule.required()
     }),
     defineField({
-      name: 'clerkUserId',
-      title: 'Clerk User ID',
-      type: 'string',
-      validation: (Rule) => Rule.required()
-    }),
-    defineField({
       name: 'customerName',
       title: 'Customer Name',
       type: 'string',
       validation: (Rule) => Rule.required()
-    }),
-    defineField({
-      name: 'customerEmail',
-      title: 'Customer Email',
-      type: 'string'
-      // validation: (Rule) => Rule.required().email()
     }),
     defineField({
       name: 'customerPhone',
@@ -180,13 +168,13 @@ export const orderType = defineType({
       amount: 'totalPrice',
       currency: 'currency',
       orderId: 'orderNumber',
-      email: 'customerEmail'
+      phone: 'customerPhone'
     },
     prepare(selection) {
       const orderIdSinippet = `${selection.orderId.slice(0, 5)}...${selection.orderId.slice(-5)}}`
       return {
         title: `${selection.name} (${orderIdSinippet})`,
-        subtitle: `${selection.amount} ${selection.currency} - ${selection.email}`,
+        subtitle: `${selection.amount} ${selection.currency} - ${selection.phone}`,
         media: BasketIcon
       }
     }

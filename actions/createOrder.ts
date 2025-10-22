@@ -14,9 +14,7 @@ interface ShippingAddress {
 interface OrderData {
   orderNumber: string
   customerName: string
-  customerEmail?: string
   customerPhone?: string
-  clerkUserId: string
   shippingAddress: ShippingAddress
   products: Array<{
     _key: string
@@ -72,7 +70,6 @@ export async function createOrder(
       await sendOrderNotificationToOwner({
         orderNumber: orderData.orderNumber,
         customerName: orderData.customerName,
-        customerEmail: orderData.customerEmail,
         customerPhone: orderData.customerPhone,
         shippingAddress: orderData.shippingAddress,
         products: productsForEmail,

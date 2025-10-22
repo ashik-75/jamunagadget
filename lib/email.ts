@@ -5,7 +5,6 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 interface OrderEmailData {
   orderNumber: string
   customerName: string
-  customerEmail?: string
   customerPhone?: string
   shippingAddress: {
     name: string
@@ -115,16 +114,7 @@ function generateOrderEmailHTML(orderData: OrderEmailData): string {
               <td style="padding: 8px 0; color: #6b7280; width: 40%;">Name:</td>
               <td style="padding: 8px 0; font-weight: bold;">${orderData.customerName}</td>
             </tr>
-            ${
-              orderData.customerEmail
-                ? `
-            <tr>
-              <td style="padding: 8px 0; color: #6b7280;">Email:</td>
-              <td style="padding: 8px 0;">${orderData.customerEmail}</td>
-            </tr>
-            `
-                : ''
-            }
+
             ${
               orderData.customerPhone
                 ? `

@@ -71,7 +71,7 @@ export const productType = defineType({
       return {
         title: selection.title,
         media: selection.images[0],
-        subtitle: `$${selection.price}`
+        subtitle: `${selection.price} BDT`
       }
     }
   }
