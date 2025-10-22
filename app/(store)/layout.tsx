@@ -18,7 +18,7 @@ export default async function MainLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>{/* your <link rel="stylesheet"> font links etc. */}</head>
-      <body className="antialiased font-hellix bg-[rgb(251,255,244)] min-h-svh text-black">
+      <body className="antialiased font-hellix  min-h-svh text-black">
         <NextTopLoader color="#ff9142" height={2} />
         <ThemeProvider>
           {isEnabled && (

@@ -20,13 +20,13 @@ export default function ProductCard({
   return (
     <div
       data-exhaustive={exhaustive ? 'true' : undefined}
-      className="relative bg-white rounded-md shadow-sm flex data-[exhaustive]:opacity-60 data-[exhaustive]:grayscale flex-col group overflow-hidden"
+      className="relative  border rounded flex data-[exhaustive]:opacity-60 data-[exhaustive]:grayscale flex-col group overflow-hidden"
     >
       <Link
         href={`/products/${product.slug?.current}`}
         className="absolute inset-0 z-[1]"
       />
-      <div className="overflow-hidden relative aspect-[6/5]">
+      <div className="overflow-hidden relative aspect-[6/5] p-2">
         {exhaustive && (
           <div className="absolute inset-0 z-10 bg-stone-500/80 grid place-content-center font-bold text-white text-xl sm:text-2xl">
             <p>Out Of Stock</p>
@@ -36,7 +36,7 @@ export default function ProductCard({
         <Image
           width={300}
           height={300}
-          className="w-full h-full object-cover transition-transform group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform group-hover:scale-105 rounded"
           src={imageUrl}
           alt={product.name || 'Product image'}
         />

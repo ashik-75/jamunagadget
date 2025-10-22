@@ -17,10 +17,10 @@ export default function ContactPage() {
           <div className="flex items-center justify-center space-x-3">
             <Mail className="w-6 h-6 text-zinc-800" />
             <Link
-              href="mailto:info.hoque.com@gmail.com"
+              href="mailto:kowsera883@gmail.com"
               className="text-lg text-zinc-800 hover:text-zinc-600 transition-colors"
             >
-              info.hoque.com@gmail.com
+              kowsera883@gmail.com
             </Link>
           </div>
           <div className="flex items-center justify-center space-x-3">
@@ -29,7 +29,7 @@ export default function ContactPage() {
               href="tel:+8801404431330"
               className="text-lg text-zinc-800 hover:text-zinc-600 transition-colors"
             >
-              01712-150029
+              01767-535011
             </Link>
           </div>
         </div>

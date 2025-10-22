@@ -13,8 +13,7 @@ export default function Footer() {
                   Store Information
                 </h3>
                 <div className="space-y-2">
-                  <p>123 Commerce Street</p>
-                  <p>Dhaka, Bangladesh 1000</p>
+                  <p>Pirhati-5841, Dhunat, Bogura</p>
                 </div>
               </div>
 

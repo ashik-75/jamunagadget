@@ -12,9 +12,8 @@ const LeftHeader: FC<{ categories: Category[] }> = async ({ categories }) => {
           title="Ir a la página principal"
           height={70}
           width={70}
-          src="/logo.webp"
-          className="invert"
-          alt="Logo 366 Clothing"
+          src="/jamuna_logo.png"
+          alt="Store logo"
         />
       </Link>
 
