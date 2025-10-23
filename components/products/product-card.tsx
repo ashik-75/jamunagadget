@@ -1,3 +1,4 @@
+import { blurDataURL } from '@/lib/constant'
 import { formatPriceBDT } from '@/lib/utils'
 import { GET_PRODUCTS_QUERYResult } from '@/sanity.types'
 import { urlFor } from '@/sanity/lib/image'
@@ -20,7 +21,7 @@ export default function ProductCard({
   return (
     <div
       data-exhaustive={exhaustive ? 'true' : undefined}
-      className="relative  border rounded flex data-[exhaustive]:opacity-60 data-[exhaustive]:grayscale flex-col group overflow-hidden"
+      className="relative border rounded flex data-[exhaustive]:opacity-60 data-[exhaustive]:grayscale flex-col group overflow-hidden"
     >
       <Link
         href={`/products/${product.slug?.current}`}
@@ -39,6 +40,9 @@ export default function ProductCard({
           className="w-full h-full object-cover transition-transform group-hover:scale-105 rounded"
           src={imageUrl}
           alt={product.name || 'Product image'}
+          loading="lazy" // ✅ Lazy load images
+          placeholder="blur" // ✅ Optional: show blur while loading
+          blurDataURL={blurDataURL}
         />
       </div>
 

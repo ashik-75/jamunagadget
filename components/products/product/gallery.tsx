@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel'
+import { blurDataURL } from '@/lib/constant'
 
 export default function GalleryProduct({
   product
@@ -72,16 +73,19 @@ export default function GalleryProduct({
     <div className="flex flex-col gap-5 sm:gap-1">
       {/* === Main Image === */}
       <div className="h-[350px] sm:w-[550px] sm:h-[550px] overflow-hidden flex justify-center max-w-full">
-        <picture>
-          <img
-            src={images[current]}
-            className="h-full w-auto max-w-full max-h-full object-contain"
-            alt={altSeo}
-            onError={(e) => {
-              e.currentTarget.src = placeholderImage
-            }}
-          />
-        </picture>
+        <Image
+          src={images[current]}
+          width={550}
+          height={550}
+          className="h-full w-auto max-w-full max-h-full object-contain"
+          alt={altSeo}
+          priority // ✅ Main image loads immediately (above the fold)
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          onError={(e) => {
+            e.currentTarget.src = placeholderImage
+          }}
+        />
       </div>
 
       {/* === Thumbnail Carousel === */}
@@ -107,6 +111,9 @@ export default function GalleryProduct({
                     src={image}
                     alt={altSeo ?? product.name ?? ''}
                     className="w-full h-full object-cover"
+                    loading="lazy" // ✅ Thumbnails lazy load
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
                     onError={(e) => {
                       e.currentTarget.src = placeholderImage
                     }}
