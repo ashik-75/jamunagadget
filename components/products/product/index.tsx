@@ -21,7 +21,7 @@ export default function ProductSlug({
         <div className="flex flex-wrap gap-2 pt-3">
           {product.categories?.map((category) => (
             <Link
-              href={`/products?category=${category.slug?.current}`}
+              href={`/categories/${category.slug?.current}`}
               key={category._id}
               className="text-sm text-lime-600 hover:underline"
             >
